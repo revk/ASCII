@@ -1,5 +1,5 @@
 # New ASCII
-The original ASCII (American Standard Code for Information Interchange) was developeed in the early '60s, and has been the foundation of unicode. It is the standard and we will be stuck with it forever. It is quite a well thought out standard, especially when you consider some of the constraints and issues of the day.
+The original ASCII (American Standard Code for Information Interchange) was developed in the early '60s, and has been the foundation of Unicode. It is the standard and we will be stuck with it forever. It is quite a well thought out standard, especially when you consider some of the constraints and issues of the day.
 
 However, with some hindsight, I think it could have been a little different. These changes would only work if I had a time machine and could change the original. I think these changes would have changed some of the behaviour that has come from ASCII being what it is.
 
@@ -12,15 +12,21 @@ This is a totally fun exercise, with no practical use, other than to possibly po
 The first thing is that I am making this new code use the same 7 bits as the original. My concept is making an ASCII for the time, 1963, but with some hindsight (well, foresight if I had a time machine), and so the fact it was 7 bits is pretty much what I am stuck with. However, I'd love to see specified :-
 
 - ASCII is 7 bits, with character values 0 to 128
-- When partity is used it shall be even parity only
+- When parity is used it shall be even parity only
 - When stored in 8 bit memory with no parity, the values 128 to 255 shall be reserved for future use (e.g. utf-8)
 - When stored in as bits the value shall be considered unsigned, so values 0 to 255
 
-### Reasons
+### Parity
 
-- It there really a need for even and odd parity, really? Specifying even means one fewer thing to get wrong when setting up serial comms over the may decades to come. Even also works well for paper tape where blank tape (00000000) is valid even parity null, and over printed paper tape, i.e. erased, (11111111) is even parity 127 character.
-- Stipulating the reserved usage for 128 to 255 could have encouraged something like utf-8 sooner maybe. But I suspect we'd have ended up with code pages and crap anyway. Without actually *creating* utd-8 and unicode in 1963, we are probably stuck with that.
-- Specifying unsignd character codes would have solved decades of pain in C coding. It would have meant a *tinyint* or some such in C perhaps, but would have saved `char` to actually be a sensible type.
+It there really a need for even and odd parity, really? Specifying even means one fewer thing to get wrong when setting up serial comms over the may decades to come. Even also works well for paper tape where blank tape (00000000) is valid even parity null, and over printed paper tape, i.e. erased, (11111111) is even parity 127 character.
+
+### Bytes
+
+Stipulating the reserved usage for 128 to 255 could have encouraged something like utf-8 sooner maybe. But I suspect we'd have ended up with code pages and crap anyway. Without actually *creating* utd-8 and Unicode in 1963, we are probably stuck with that.
+
+### Signed
+
+Specifying unsigned character codes would have solved decades of pain in C coding. It would have meant a *tinyint* or some such in C perhaps, but would have saved `char` to actually be a sensible type.
 
 ## Blocks
 
@@ -43,9 +49,9 @@ The characters `&` and `_` shall, where practical, be considered *normal letters
 
 ### `&` and `_`
 
-To pack letters and numbers in to 64 characters you need two extra. Ampersand has been around for 2,000 years, and has, for centiries, been considered the 26 letter of the alphabet. Reading the alphabet you say *..., X, Y, Z, and pe se and*, i.e. "and, by itself, *and". But `&` has had a really odd existance - hijacked for XML, and disallowed in so many places.
+To pack letters and numbers in to 64 characters you need two extra. Ampersand has been around for 2,000 years, and has, for centuries, been considered the 26 letter of the alphabet. Reading the alphabet you say *..., X, Y, Z, and pe se and*, i.e. "and, by itself, *and". But `&` has had a really odd existence - hijacked for XML, and disallowed in so many places.
 
-One of the things often done with numbers and letters is to make *identifiers*, e.g. variable names, and a common rule is *Letter followed by letters or numbers*. But there is alway demand for separators in the identifier, so `_` is often allowed an an *honourary letter*, e.g. allowing `_FLAG_2` to be a valid identified. Of course it is not always `_`, domain names us `-` for example.
+One of the things often done with numbers and letters is to make *identifiers*, e.g. variable names, and a common rule is *Letter followed by letters or numbers*. But there is alway demand for separators in the identifier, so `_` is often allowed an *honourary letter*, e.g. allowing `_FLAG_2` to be a valid identified. Of course it is not always `_`, domain names us `-` for example.
 
 By making `&` and `_` officially *honoury letters* we can encourage consistent usage as *letters* and avoid them being hijacked for other things.
 
@@ -57,7 +63,7 @@ Another issue with hex is that some people think it makes sense to use *lower ca
 
 ### Base64
 
-Some times you need to express binary data packed as characters, and one common way is `base64`. It uses 64 characetrs to code 6 bits at a time. Normally this numbers, and letters (upper and lower case), but needs two more characters. Sadly those two extra are not consistent and many standards exist. By making a block of 64 *numbers and letters* we create the one and only coding to use for base64 in the future.
+Some times you need to express binary data packed as characters, and one common way is `base64`. It uses 64 characters to code 6 bits at a time. Normally this numbers, and letters (upper and lower case), but needs two more characters. Sadly those two extra are not consistent and many standards exist. By making a block of 64 *numbers and letters* we create the one and only coding to use for base64 in the future.
 
 ### Teletype
 
@@ -69,8 +75,8 @@ This does make it a little more complex for a teletype for *SHIFT* for lower cas
 |----|---|-------|
 |`00`|`NULL`|This means *nothing*. In the context of a text string in memory it means the *end of string*. For a fixed space string with shorter text it is padding to the fixed length. In a *text* file it can mean end of file.|
 |`01`|`CR`|Carriage return - this moves the print position to start of current row. This is not to be used a *end of line* indicator, and only to be used where the carriage move is needed on its own (i.e. not with *line feed*)|
-|`02`|`LF`|Line feed - this moves the print position to the next row, scrolling the paper or screen if necessary to get to a new row, and going to a new page on a page based output device if necessary. This is not to be used a *end of line* indicator, and only to be used where the carriage move is needed on its own (i.e. not with *carriage returm*)|
-|`03`|`EOL`|End of line - this is the code for end of line and used for user imput end of line key, and for output (where it will normally act as both *carriage return* and *line feed*|
+|`02`|`LF`|Line feed - this moves the print position to the next row, scrolling the paper or screen if necessary to get to a new row, and going to a new page on a page based output device if necessary. This is not to be used a *end of line* indicator, and only to be used where the carriage move is needed on its own (i.e. not with *carriage return*)|
+|`03`|`EOL`|End of line - this is the code for end of line and used for user input end of line key, and for output (where it will normally act as both *carriage return* and *line feed*|
 |`04`|`LEFT`|Cursor move left - stop if at left of carriage / screen|
 |`05`|`RIGHT`|Cursor move right - stop if at right of carriage / screen
 |`06`|`UP`|Cursor move up - stop if at top of a page device or screen. Printing on a roll should only stop if it can detect out of paper back feed.|
@@ -178,7 +184,7 @@ Finally punctuation - there is not a lot to say here apart from the fact that so
 
 ### Quotes
 
-Less sure of this, but for double and single quote marks I have defined balanced pairs. It may be better to make those single, and defined balanced question and exlamation marks and inverted versions instead.
+Less sure of this, but for double and single quote marks I have defined balanced pairs. It may be better to make those single, and defined balanced question and exclamation marks and inverted versions instead.
 
 ### Divide
 
@@ -186,7 +192,7 @@ Define `÷` separate to `/` as `/` gets used for all sorts of things
 
 ### Currency
 
-We cannot do proper currency, but do `£` and `$` why not. For decades the two were needed before unicode sorted it properly.
+We cannot do proper currency, but do `£` and `$` why not. For decades the two were needed before Unicode sorted it properly.
 
 ### Hash
 
