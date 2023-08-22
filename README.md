@@ -98,6 +98,10 @@ The use of null to end strings seems sane, but you don't need NUL and ETX and EO
 
 The confusion over whether `CR` or `LF` is end of line needs fixing - it has caused issues for decades. This should fix it without removing the finer control of a `CR` to overprint, etc.
 
+### TAB
+
+TAB is a pain even now. It used to move to next tab stop on a typewriter, which was sometimes adjustable. Often it was next multiple of 8 characters. Ideal for indenting code, but too big at 8 characters, so people use 4 spac or even 3 space. Basically you cannot see TABs and that is a problem even now, so no TAB. 
+
 ### Arrows
 
 Were totally missing and added to key codes and screens in so many different ways - let's standardise.
@@ -124,9 +128,9 @@ The character codes shown are printed inverted colour to show as a special chara
 |`13`|`LEND`|`]`|Start of *list*, like `]` in JSON.|
 |`14`|`VSEP`|`=`|Value seperator - separates an identifier from a value, like `=` in JSON|
 |`15`|`ISEP`|`,`|Item separator - separates items in a structure or list, like `,` in JSON|
-|`16`|TODO
-|`17`|
-|`18`|
+|`16`|`PSTART`|`(`|Parameters start|
+|`17`|`PEND`|`)`|Parameters end|
+|`18`|TODO
 |`19`|
 |`1A`|
 |`1B`|
