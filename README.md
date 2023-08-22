@@ -135,7 +135,7 @@ The original ASCII has a lot of control characters, including structure codes li
 
 The fact these mirror *real* characters also makes it more valid to exclude them from *content* as any printable content, e.g. `O'Neil` needing an apostrophe in a name, can use the *normal* character equivilant and not the special structure character. Ultimately this copuld lead to special *programmers keyboards* that have these as separate keys, but they are designed to be easily some sort of *shift* or *control* from normal prinatble characters.
 
-The character codes (apart from *space*) shown shoulw be printed inverted colour to show as a special character (or some other way to mark them as special versions of normal punctiation).
+The character codes (apart from *space*) shown should be printed inverted colour to show as a special character (or some other way to mark them as special versions of normal punctiation).
 
 |Blk|`0`|`1`|`2`|`3`|`4`|`5`|`6`|`7`|`8`|`9`|`A`|`B`|`C`|`D`|`E`|`F`|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
