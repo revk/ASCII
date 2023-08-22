@@ -127,7 +127,7 @@ We used to have `ESC` in the past - sometimes with one character, some times wit
 
 ### BELL
 
-Really - why was this ever there :-)
+Really - why was this ever there :-). But to be fail, add as a control sequence maybe?
 
 ## Structure characters
 
