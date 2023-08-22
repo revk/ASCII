@@ -58,7 +58,7 @@ The characters `&` and `_` shall, where practical, be considered *normal letters
 
 ### Letters
 
-The fact letters started in old ASCII at 65 and 97 did not really help anyone, starting at 42 and 72 is not any harder.
+The fact letters started in old ASCII at 65 and 97 did not really help anyone, starting at 42 and 69 is not any harder.
 
 ### `&` and `_`
 
