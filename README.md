@@ -168,6 +168,10 @@ Finally punctuation - there is not a lot to say here apart from the fact that so
 |`6`|`£`|`$`|`:`|`;`|`<`|`>`|`⌃`|`⌄`|`@`|`%`|`-`|`+`|`*`|`÷`|`?`|`!`|
 |`7`|`{`|`}`|`[`|`]`|`(`|`)`|`“`|`”`|`‘`|`’`|`.`|`=`|`,`|`/`|`\`|`█`|
 
+### Quotes
+
+I have gone for macthed pairs for `“`...`”` and `‘`...`’`. Why not? An alternative would be matching inverting `!` and `?` maybe.
+
 ### Divide
 
 Define `÷` separate to `/` as `/` gets used for all sorts of things, and this makes a nice set of `-`, `+`, `*` and `÷`.
@@ -175,6 +179,10 @@ Define `÷` separate to `/` as `/` gets used for all sorts of things, and this m
 ### Currency
 
 We cannot do proper currency, but do `£` and `$` why not? For decades the two were needed before Unicode sorted it properly, adt he whole mess with `#` and `£` was just silly.
+
+### `DEL`
+
+Character 127 (█) matches the paper tape over punch delete (`DEL`) character.
 
 # Printable character table
 
