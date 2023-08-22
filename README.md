@@ -172,7 +172,7 @@ Finally punctuation - there is not a lot to say here apart from the fact that so
 
 ### Quotes
 
-I have gone for matched pairs for `“`...`”` and `‘`...`’`. Why not? An alternative would be matching inverting `!` and `?` maybe. Tricky one.
+I have gone for matched pairs for `“`...`”` and `‘`...`’`. Why not? It would make fonts show start/end quotes uch more clearly as a result. An alternative would be matching inverting `!` and `?` maybe. Tricky one.
 
 ### Divide
 
