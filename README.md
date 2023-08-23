@@ -119,7 +119,7 @@ TAB is a pain even now. It used to move to next tab stop on a typewriter, which 
 
 ### Arrows
 
-These were totally missing in old ASCII, and added in some many no standard ways on so many systems - let's standardise and use for input arrow key codes and output controls.
+These were totally missing in old ASCII, and added in some many non standard ways on so many systems - let's standardise and use for input arrow key codes and output controls.
 
 ### Control sequence
 
