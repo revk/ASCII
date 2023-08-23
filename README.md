@@ -13,7 +13,7 @@ The first thing is that I am making this new code use the same 7 bits as the ori
 
 This specification includes a mandate that ...
 
-- ASCII is 7 bits, with character values 0 to 128
+- ASCII is 7 bits, with character values 0 to 127
 - When parity is used it shall be even parity only
 - When stored in 8 bit memory with no parity, the values 128 to 255 shall be reserved for future use (e.g. utf-8)
 - When stored in 8 bits the value shall be considered unsigned, so values 0 to 255
