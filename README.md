@@ -182,7 +182,7 @@ Define `÷` separate to `/` as `/` gets used for all sorts of things, and this m
 
 We cannot do proper currency, but do `£` and `$` why not? For decades the two were needed before Unicode sorted it properly, and the whole mess with `#` and `£` was just silly.
 
-### `~` and `|`
+### `~` and `|` and `#`
 
 Tough, they are silly.
 
