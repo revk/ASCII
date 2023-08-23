@@ -64,7 +64,7 @@ The fact letters started in old ASCII at 65 and 97 did not really help anyone, s
 
 To pack letters and numbers in to 64 characters you need two extra symbols of some sort. Ampersand has been around for 2,000 years, and has, for centuries, been considered the 27th letter of the alphabet. Reading the alphabet you say *..., X, Y, Z, and pe se and*, i.e. "and, by itself, *and". But `&` has had a really odd existence - hijacked for XML, and disallowed in so many places. Let's fix that! Indeed a single `&`/`_` key on keyboards would be expected as a result.
 
-One of the things often done with numbers and letters is to make *identifiers*, e.g. variable names, and a common rule is *Letter followed by letters or numbers*. But there is alway demand for separators in the identifier, so `_` is often allowed an *honourary letter*, e.g. allowing `_FLAG_2` to be a valid identified. Of course it is not always `_`, domain names us `-` for example.
+One of the things often done with numbers and letters is to make *identifiers*, e.g. variable names, and a common rule is *Letter followed by letters or numbers*. But there is alway demand for separators in the identifier, so `_` is often allowed an *honourary letter*, e.g. allowing `_FLAG_2` to be a valid identified. Of course it is not always `_`, domain names use `-` for example.
 
 By making `&` and `_` officially *honoury letters* we can encourage consistent usage as *letters* and avoid them being hijacked for other things. The underlying character coding can steer design and policy in the future.
 
