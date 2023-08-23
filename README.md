@@ -123,7 +123,7 @@ These were totally missing in old ASCII, and added in some many non standard way
 
 ### Control sequence
 
-We used to have `ESC` in the past - sometimes with one character, some times with a sequence up to (and including) `;`, and many otehrs. This is neater as all control sequences are variable length that is easily ignored by devices that don't know what the sequence means. Tempting to define sequencets `+B`/`-B` as *bold*, `+I`/`-I` as *italic* and so on in some way to get the ball rolling.
+We used to have `ESC` in the past - sometimes with one character, some times with a sequence up to (and including) `;`, and many others. This is neater as all control sequences are variable length that is easily ignored by devices that don't know what the sequence means. Tempting to define sequencets `+B`/`-B` as *bold*, `+I`/`-I` as *italic* and so on in some way to get the ball rolling.
 
 ### BELL
 
